@@ -122,8 +122,22 @@ void inserirElemento()
 
 void excluirElemento()
 {
+	int excluir;
+	cout << "Digite o elemento que deseja excluir:";
+	cin >> excluir;
+	int pos = posicaoElemento(excluir);
 
-
+	if (pos != -1) {
+		for (int i = pos; i < nElementos; i++) {
+			lista[i] = lista[i + 1];
+		}
+		nElementos = nElementos - 1;
+		cout << "O elemento foi excluido com sucesso \n";
+	}
+	else
+	{
+		cout << "O elemento digitado nao foi encontrado" << endl;
+	}
 }
 
 void buscarElemento()
